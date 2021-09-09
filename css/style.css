@@ -1,0 +1,115 @@
+@import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+body {
+    font-family: Roboto, sans-serif;
+    background-color: #333333;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.todo {
+    margin-top: 30px;
+    width: 364px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #4c4c4c;
+    box-shadow: 0 4px 16px #191919;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.todo__title {
+    margin-top: 20px;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    flex: 0 1 auto;
+}
+
+.todo__control {
+    margin-top: 20px;
+    flex: 0 1 auto;
+}
+
+.todo__field {
+    height: 22px;
+    border: none;
+    border-bottom: 2px solid #FFFFFF;
+    outline: none;
+    background-color: transparent;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.todo__add {
+    box-sizing: border-box;
+    min-width: 25px;
+    min-height: 15px;
+    text-align: center;
+    text-decoration: none;
+    border: solid 1px #FFFFFF;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #4c4c4c;
+    font-size: 16px;
+    outline: none;
+    padding: 1px 20px;
+}
+
+.todo__add:hover {
+    box-shadow: 0 4px 4px #191919;
+}
+
+.todo__add:active {
+    background-color: #FFFFFF;
+    color: #4c4c4c;
+}
+
+.todo__list {
+    margin-top: 20px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.todo__task {
+    box-sizing: border-box;
+    margin-top: 10px;
+    width: 364px;
+    min-height: 50px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    background-color: #4c4c4c;
+    box-shadow: 0 4px 16px #191919;
+    color: #FFFFFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+input[type='checkbox'] {
+    position: absolute;
+    right: 10px;
+}
+
+.success {
+    color: #191919;
+    order: 999999999;
+}
+
+.unsuccess {
+    order: 0;
+}
