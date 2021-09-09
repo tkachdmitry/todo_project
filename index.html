@@ -7,16 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ToDo</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
 <div class="wrapper">
     <div class="todo">
         <h2 class="todo__title">Your ToDo tracker</h2>
-        <div class="todo__control">
-            <input type="text" class="todo__field" placeholder="Enter the task">
-            <button class="todo__add" type="button">+</button>
-        </div>
+            <div class="todo__control">
+                <form action="#" method="POST" name="task">
+                    <input type="text" class="todo__field" placeholder="Enter the task">
+                    <button class="todo__add" type="submit">+</button>
+                </form>
+            </div>
         </div>
     <div class="todo__list"></div>
 </div>
