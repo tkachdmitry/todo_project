@@ -63,6 +63,7 @@ body {
     font-size: 16px;
     outline: none;
     padding: 1px 20px;
+    cursor: pointer;
 }
 
 .todo__add:hover {
@@ -103,6 +104,7 @@ body {
 input[type='checkbox'] {
     position: absolute;
     right: 10px;
+    top: 3px;
 }
 
 .success {
@@ -112,4 +114,22 @@ input[type='checkbox'] {
 
 .unsuccess {
     order: 0;
+}
+
+.todo__delete {
+    box-sizing: border-box;
+    padding: 1px 4px;
+    border: solid 2px #5b5b5b;
+    border-radius: 6px;
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    bottom: 3px;
+    cursor: pointer;
+    color: #cecece;
+}
+
+.todo__delete:active {
+    background-color: #5b5b5b;
+    color: #cecece;
 }

@@ -1,11 +1,10 @@
 'use strict'
 document.addEventListener("DOMContentLoaded", function(event) {
-    console.log('loaded');
     const todoField = document.querySelector('.todo__field');
     const todoAdd = document.querySelector('.todo__add');
     const todoList = document.querySelector('.todo__list');
 
-    const taskLength = (value) => {
+    const limitTaskLength = (value) => {
         // limit for task length
         if (value.length > 97) {
             value = value.substring(0, 97);
@@ -19,15 +18,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
         // create todoTask
         const todoTask = document.createElement('div');
         todoTask.classList.add("todo__task");
-        todoTask.textContent = taskLength(value);
+        todoTask.textContent = limitTaskLength(value);
         // create checkbox in todoTask
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
-        // todoTask.classList.add("todo__checkbox");
         checkbox.classList.add("todo__checkbox");
         todoTask.appendChild(checkbox)
+        // create deleteBtn in todoTask
+        const deleteBtn = document.createElement('div');
+        deleteBtn.textContent = 'Del';
+        deleteBtn.classList.add("todo__delete");
+        todoTask.appendChild(deleteBtn);
+
         // engage checkbox function completeTask
         checkbox.addEventListener('click', completeTask);
+        // engage deleteBtn function deleteTask
+        deleteBtn.addEventListener('click', deleteTask);
 
         return todoTask;
     }
@@ -50,11 +56,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
             checkboxParent.classList.remove('unsuccess');
             checkboxParent.classList.add('success');
             checkboxParent.classList.add('lastinorder');
-
         } else {
             checkboxParent.classList.remove('success');
             checkboxParent.classList.add('unsuccess');
         }
+    }
+
+    const deleteTask = (event) => {
+        event.preventDefault();
+        event.target.parentNode.remove();
     }
 
     todoAdd.addEventListener('click', addToDoTask);
