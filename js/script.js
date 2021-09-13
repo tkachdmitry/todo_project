@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     const deleteTask = (event) => {
         event.preventDefault();
-        event.target.parentNode.parentNode.remove();
+        event.target.parentNode.remove();
         console.log('delete')
     }
 
