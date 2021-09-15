@@ -6,10 +6,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const todoList = document.querySelector('.todo__list');
 
     const limitTaskLength = (value) => {
-        // limit for task length
-        if (value.length > 97) {
-            value = value.substring(0, 97);
-            return `${value}...`;
+    // limit for task length
+        if (value.length > 30) {
+            value = `${value.substring(0,28)}-
+                        ${value.substring(28, 50)}...`;
+            console.log(value);
+            return value;
         } else {
             return value;
         }
@@ -19,11 +21,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
         // create todoTask
         const todoTask = document.createElement('div');
         todoTask.classList.add("todo__task");
-        // create todoTaskTitle
+        const taskDiv = document.createElement('div');
+        //create taskDiv in todoTask
+        taskDiv.classList.add('todo__titlediv');
+        todoTask.appendChild(taskDiv);
+        // create todoTaskTitle in taskDiv
         const todoTaskTitle = document.createElement('div');
         todoTaskTitle.classList.add("todo__title");
         todoTaskTitle.textContent = limitTaskLength(value);
-        todoTask.appendChild(todoTaskTitle);
+        taskDiv.appendChild(todoTaskTitle);
         // create checkbox in todoTask
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
@@ -49,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             taskNode.classList.remove('todo__task');
             taskNode.classList.add('todo__task-pomodoro');
 
+            // function create pomodoro nodes
             const createAndAppend = (parent, {text = '', classname = ''}) => {
                 const element = document.createElement('div');
                 element.textContent = text;

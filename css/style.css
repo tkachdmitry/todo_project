@@ -86,7 +86,7 @@ body {
     box-sizing: border-box;
     margin-top: 10px;
     width: 364px;
-    min-height: 100px;
+    min-height: 115px;
 
     padding-left: 10px;
     padding-right: 10px;
@@ -114,6 +114,7 @@ input[type='checkbox'] {
 
 .success .todo__title  {
     color: #191919;
+    text-align: center;
 }
 
 .unsuccess {
@@ -144,17 +145,15 @@ input[type='checkbox'] {
     padding: 0px 20px;
     background-color: #4c4c4c;
     font-weight: 700;
-    /*width: 80px;*/
     border: 2px solid #FFFFFF;
     border-radius: 10px;
-    /*overflow: hidden;*/
-    bottom: 3px;
+    bottom: 10px;
 }
 
 .todo__task-pomodoro {
     margin-top: 30px;
     width: 364px;
-    height: 255px;
+    height: 270px;
     border-radius: 10px;
     background-color: #4c4c4c;
     box-shadow: 0 4px 16px #191919;
@@ -166,17 +165,35 @@ input[type='checkbox'] {
     position: relative;
 }
 
-.todo__title {
-    /*margin-top: 12px;*/
-    height: 50px;
+.todo__titlediv {
     position: absolute;
-    top: 10px;
+    padding: 3px;
+    top: 15px;
+    min-height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #5b5b5b;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.todo__title {
     color: #FFFFFF;
     font-size: 18px;
+    overflow: hidden;
+    width: 290px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
 }
 .todo__timer {
-    margin-top: 55px;
-
+    margin-top: 80px;
     width: 200px;
     border: 2px solid #FFFFFF;
     border-radius: 10px;
